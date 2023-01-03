@@ -25,8 +25,12 @@ def runningModel(model):
     history = model.fit(trainX, trainY, epochs=100, batch_size=32)
     fitEndTime = time.time()
 
+    score = model.evaluate(x=np.array(testX), y=np.array(testY))
+
     f = open(f"./{caseString}/Model_Training_Time.txt", "w")
-    f.write(f"{caseString} 모델 학습 시간: {fitEndTime - fitStartTime:.3} sec\n")
+    f.write(
+        f"""{caseString} 모델 학습 시간: {fitEndTime - fitStartTime:.3} sec\n{caseString} 모델 평가: {score[0]}"""
+    )
     f.close()
 
     # 그래프 출력 및 저장

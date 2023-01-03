@@ -1,1 +1,2 @@
-SimpleRNN 모델 학습 시간: 47.1 sec
+SimpleRNN 모델 학습 시간: 49.2 sec
+SimpleRNN 모델 평가: 0.00031484075589105487
