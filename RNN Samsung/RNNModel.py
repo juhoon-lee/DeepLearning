@@ -4,6 +4,7 @@ from keras.layers import SimpleRNN, Dense, GRU
 def simpleRNN():
     model = Sequential()
     model.add(SimpleRNN(units=4, input_length=5, input_dim=1, activation="tanh"))
+    model.add(Dense(1))
     model.summary()
 
     return model

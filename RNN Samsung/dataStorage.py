@@ -40,8 +40,6 @@ class stockDataSet:
     def __minMaxNormalize(self, list):
         normalized = []
         print("최대 최소 값")
-        print(max(list))
-        print(min(list))
         for value in list:
             normalizedNum = (value - min(list)) / (max(list) - min(list))
             normalized.append(normalizedNum)

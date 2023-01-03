@@ -23,7 +23,7 @@ apple = pd.read_csv("Apple_5Y.csv")
 # print(apple.describe())
 
 # trainData, testData 가공
-def transformData(data: [[float]]) -> (([float], [float]), ([float], [float])):
+def transformData(data: [[float]]) -> ([[[float]]], [[float]], [[[float]]], [[float]]):
     # 날짜 제외
     data = data.drop(columns=["Date"])
 
@@ -47,11 +47,23 @@ def transformData(data: [[float]]) -> (([float], [float]), ([float], [float])):
             dataX.append(temp)
             dataY.append(dataSet[index + timeStep])
 
-        return dataX, dataY
+        return np.array(dataX), np.array(dataY)
 
-    (trainX, trainY) = parsingData(trainSet)
-    (testX, testY) = parsingData(testSet)
+    trainDataX, trainDataY = parsingData(trainSet)
+    testDataX, testDataY = parsingData(testSet)
 
+    return trainDataX, trainDataY, testDataX, testDataY
 
+# 데이터 분리
+trainX, trainY, testX, testY = transformData(apple)
 
-transformData(apple)
+print(trainX.shape)
+print(trainY.shape)
+print(testX.shape)
+print(testY.shape)
+
+# 모델 구현
+# 모델 컴파일
+# 모델 훈련
+# 예측
+# multiStep 예측
