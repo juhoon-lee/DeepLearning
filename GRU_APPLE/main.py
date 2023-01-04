@@ -1,30 +1,73 @@
+#!/usr/bin/env python
+# coding: utf-8
+import keras.losses
+# #### 패키지 Import
+
+# In[23]:
+
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import time
 from sklearn.preprocessing import MinMaxScaler
-import tensorflow as tf
 from keras.models import Sequential
 from keras.layers import GRU, Dense
 
-# 전역변수 설정
-timeStep = 10 # 10, 20, 40
-hiddenState = 32 # 32, 64, 256
-graphTitle = "Default test"
 
-# Pandas Setting
+# #### 전역변수 설정
+
+# In[24]:
+
+
+trainGraphTitle = "Train Data"
+testGraphTitle = "Test Data"
+
+timeStep = 10 # input_length 10, 20, 40
+hiddenState = 32 # units: 32, 64, 256
+activation = "tanh" # tanh, sigmoid
+epochs = 100 # 50 100 200
+batchSize = 32 # 32 64 256
+dataSeYear = 5 # 5, 10, 40
+loss = "mse" # mse, rmse
+optimizer = "adam" # adam, sgd
+
+
+# #### Pandas Setting
+
+# In[25]:
+
+
 pd.set_option('display.max_rows', None) # row 생략 없이 출력
 pd.set_option('display.max_columns', None) # col 생략 없이 출력
 
-# 데이터 불러오기
+
+# #### Data Load
+
+# In[26]:
+
+
 apple = pd.read_csv("Apple_5Y.csv")
-# apple = pd.read_csv("Apple_10Y.csv")
-# apple = pd.read_csv("Apple_Whole_Period.csv")
 
-# Describe 출력
-# print(apple.describe())
+if dataSeYear == 10:
+    apple = pd.read_csv("Apple_10Y.csv")
+elif dataSeYear == 40:
+    apple = pd.read_csv("Apple_Whole_Period.csv")
 
-# trainData, testData 가공
+
+# #### Describe 확인
+
+# In[27]:
+
+
+print(apple.describe())
+
+
+# #### trainData, testData 가공하는 함수
+
+# In[28]:
+
+
 def transformData(data: [[float]]) -> ([[[float]]], [[float]], [[[float]]], [[float]]):
     # 날짜 제외
     data = data.drop(columns=["Date"])
@@ -55,32 +98,51 @@ def transformData(data: [[float]]) -> ([[[float]]], [[float]], [[[float]]], [[fl
 
     return trainDataX, trainDataY, testDataX, testDataY
 
-# 데이터 분리
+
+# #### Data Parsing
+
+# In[29]:
+
+
 trainX, trainY, testX, testY = transformData(apple)
 
-# 모델 구현
+
+# #### Model Implementation
+
+# In[30]:
+
+
 model = Sequential()
 model.add(
     GRU(
-        units = 32,
+        units = hiddenState,
         input_length = trainX.shape[1],
         input_dim = trainX.shape[2],
-        activation = "tanh"
+        activation = activation
     )
 )
 model.add(Dense(6))
 model.summary()
 
-# 모델 컴파일
+
+# #### Model Complie
+
+# In[31]:
+
 model.compile(
-    loss = 'mse',
-    optimizer = 'adam',
+    loss = loss,
+    optimizer = optimizer,
     metrics = ["mae"]
 )
 
-# 모델 훈련
+
+# #### Model Training
+
+# In[48]:
+
+
 fitStartTime = time.time()
-model.fit(
+history = model.fit(
     trainX,
     trainY,
     epochs = 100,
@@ -88,7 +150,12 @@ model.fit(
 )
 fitEndTime = time.time()
 
-# 시간 및 평가 기록
+
+# #### 시간 및 평가 기록
+
+# In[43]:
+
+
 fitTime = fitEndTime - fitStartTime
 score = model.evaluate(testX, testY)
 
@@ -96,16 +163,71 @@ f = open(f"Training_Result.txt", "w")
 f.write(f"모델 학습 시간: {fitTime:.3} sec\n평가 손실: {score[0]}")
 f.close()
 
-# 예측
-prediction = model.predict(testX)
-adjClose = prediction[:, 4]
 
-# 그래프
-plt.title(graphTitle)
-plt.plot(testY[:, 4], label="Test ADJ.Close")
-plt.plot(adjClose, label="Predict ADJ.Close")
+# In[44]:
+
+
+f"모델 학습 시간: {fitTime:.3} sec"
+
+
+# In[45]:
+
+
+f"평가 손실: {score[0]}"
+
+
+# #### 예측
+
+# In[46]:
+
+
+trainPrediction = model.predict(trainX)
+testPrediction = model.predict(testX)
+
+
+# #### 그래프
+
+# #### Loss
+
+# In[47]:
+
+
+loss = history.history["loss"]
+plt.title("Loss")
+plt.plot(loss, label="loss")
 plt.grid(True)
 plt.legend()
 plt.show()
 
-# multiStep 예측
+
+# Train Data Graph
+
+# In[37]:
+
+
+plt.title(trainGraphTitle)
+plt.plot(trainY[:, 4], label="Train ADJ.Close")
+plt.plot(trainPrediction[:, 4], label="Train ADJ.Close")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+
+# Test Data Graph
+
+# In[38]:
+
+
+plt.title(testGraphTitle)
+plt.plot(testY[:, 4], label="Test ADJ.Close")
+plt.plot(testPrediction[:, 4], label="Predict ADJ.Close")
+plt.grid(True)
+plt.legend()
+plt.show()
+
+
+# In[ ]:
+
+
+
+

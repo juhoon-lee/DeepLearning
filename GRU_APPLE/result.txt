@@ -1,0 +1,143 @@
+------------- 파라미터 변경 예상 테스트 ----------------------------
+
+Default
+모델 학습 시간: 43.0 sec
+평가 손실: 0.0004027197137475014
+
+Hidden State 32
+모델 학습 시간: 41.4 sec
+평가 손실: 0.00060069072060287
+
+Hidden State 256
+모델 학습 시간: 54.9 sec
+평가 손실: 0.0004061104264110327
+
+Time Step 10
+모델 학습 시간: 35.5 sec
+평가 손실: 0.0003597337636165321
+
+Time Step 40
+모델 학습 시간: 60.1 sec
+평가 손실: 0.0004120055236853659
+
+Activation sigmoid
+모델 학습 시간: 1.47e+03 sec
+평가 손실: 0.0003830739005934447
+
+Epochs 50
+모델 학습 시간: 21.4 sec
+평가 손실: 0.0005429008742794394
+
+Epochs 200
+모델 학습 시간: 83.0 sec
+평가 손실: 0.00029917265055701137
+
+Batch Size 32
+모델 학습 시간: 77.5 sec
+평가 손실: 0.00030846844310872257
+
+Batch Size 256
+모델 학습 시간: 14.6 sec
+평가 손실: 0.0006307970033958554
+
+DataSize 5 Year
+모델 학습 시간: 21.5 sec
+평가 손실: 0.0011088692117482424
+
+DataSize 40 Year
+모델 학습 시간: 1.83e+02 sec
+평가 손실: 0.00027505631442181766
+
+Optimizer SGD
+모델 학습 시간: 39.0 sec
+평가 손실: 0.00051795260515064
+
+------------- 적절한 파라미터 후보 찾기 ----------------------------
+
+Best Parameter Candidate 1
+
+hiddenState = 256 
+timeStep = 40 
+activation = "tanh" 
+epochs = 200 
+batchSize = 32 
+dataSetYear = 40 
+optimizer = "adam" 
+
+모델 학습 시간: 1.14e+03 sec
+평가 손실: 0.000274325895588845
+
+-- 
+
+Best Parameter Candidate 2
+모델 학습 시간: 5.59e+02 sec
+평가 손실: 0.003180550877004862
+
+hiddenState = 64 
+timeStep = 20 
+activation = "tanh" 
+epochs = 100 
+batchSize = 32 
+dataSetYear = 40 
+optimizer = "adam" 
+
+--
+
+Best Parameter Candidate 3
+모델 학습 시간: 5.83e+02 sec
+평가 손실: 0.0007036237511783838
+
+hiddenState = 32
+timeStep = 20
+activation = "tanh"
+epochs = 100 
+batchSize = 32
+dataSetYear = 40 
+optimizer = "adam" 
+
+--
+
+Best Parameter Candidate 4
+모델 학습 시간: 4.5e+02 sec
+평가 손실: 0.000407578976592049
+
+hiddenState = 32 
+timeStep = 10 
+activation = "tanh" 
+epochs = 100
+batchSize = 32 
+dataSetYear = 40 
+optimizer = "adam" 
+
+--
+
+Best Parameter Candidate 5
+모델 학습 시간: 2.37e+02 sec
+평가 손실: 0.0004939697100780904
+
+hiddenState = 64 
+timeStep = 10 
+activation = "tanh" 
+epochs = 100 
+batchSize = 64 
+dataSetYear = 40 
+optimizer = "adam"
+
+--
+
+Best Parameter Candidate 4
+모델 학습 시간: 12.9 sec
+평가 손실: 0.0018679543863981962
+
+Best Parameter Candidate 4
+모델 학습 시간: 13.1 sec
+평가 손실: 0.0019807869102805853
+
+Best Parameter Candidate 4
+모델 학습 시간: 13.4 sec
+평가 손실: 0.002325145062059164
+
+None
+모델 학습 시간: 2.99e+02 sec
+평가 손실: 0.0012201477074995637
+
