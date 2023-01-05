@@ -12,10 +12,6 @@
 - Early Stopping
 - Best Parameter
 
-### 좋았던 결과
-
-- Epoach 200
-
 ## 가설 및 검증
 
 ### Layer
