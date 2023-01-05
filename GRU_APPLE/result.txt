@@ -68,3 +68,23 @@ Activation - sigmoid
 모델 학습 시간: 14.3 sec
 평가 손실: 0.000880726205650717
 
+Activation - sigmoid
+모델 학습 시간: 11.1 sec
+평가 손실: 0.000691580877173692
+
+Activation - sigmoid
+모델 학습 시간: 40.3 sec
+평가 손실: 0.0008682268089614809
+
+Activation - sigmoid
+모델 학습 시간: 1.24e+02 sec
+평가 손실: 0.0009553762502036989
+
+Layer - SingleGRU
+모델 학습 시간: 12.9 sec
+평가 손실: 0.0007320723379962146
+
+Layer - SingleGRU
+모델 학습 시간: 15.6 sec
+평가 손실: 0.00099821703042835
+
