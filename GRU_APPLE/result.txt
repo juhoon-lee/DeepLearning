@@ -396,3 +396,20 @@ patience = 30
 
 --------------------------------------
 
+ETC - Test
+모델 학습 시간: 19.5 sec
+평가 손실: 0.0007259132689796388
+30일 예측 손실: 0.0047469111159443855
+
+layer = SingleGRU
+hiddenState = 32
+timeStep = 20
+activation = tanh
+epochs = 100
+batchSize = 64
+dataSetYear = 10
+optimizer = adam
+patience = 30
+
+--------------------------------------
+
