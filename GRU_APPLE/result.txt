@@ -3,8 +3,8 @@
 
 Layer - SingleGRU
 모델 학습 시간: 17.5 sec
-평가 손실: 0.0008575702086091042
-30일 예측 손실: 0.007986944168806076
+평가 손실: 0.00085
+30일 예측 손실: 0.00798
 
 layer = SingleGRU
 hiddenState = 32
@@ -12,7 +12,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -20,8 +20,8 @@ patience = 30
 
 Layer - DoubleGRU
 모델 학습 시간: 26.3 sec
-평가 손실: 0.001108418102376163
-30일 예측 손실: 0.002273661782965064
+평가 손실: 0.00110
+30일 예측 손실: 0.00227
 
 layer = DoubleGRU
 hiddenState = 32
@@ -29,7 +29,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -37,8 +37,8 @@ patience = 30
 
 Layer - TripleGRU
 모델 학습 시간: 46.2 sec
-평가 손실: 0.0010362564353272319
-30일 예측 손실: 0.003253573551774025
+평가 손실: 0.001036
+30일 예측 손실: 0.00325
 
 layer = TripleGRU
 hiddenState = 32
@@ -46,7 +46,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -54,8 +54,8 @@ patience = 30
 
 Activation - sigmoid
 모델 학습 시간: 1.41e+03 sec
-평가 손실: 0.0005944875301793218
-30일 예측 손실: 0.005689704325050116
+평가 손실: 0.00059
+30일 예측 손실: 0.00568
 
 layer = SingleGRU
 hiddenState = 32
@@ -63,7 +63,7 @@ timeStep = 20
 activation = sigmoid
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -71,8 +71,8 @@ patience = 30
 
 TimeStep - 10
 모델 학습 시간: 13.5 sec
-평가 손실: 0.0005864295526407659
-30일 예측 손실: 0.004696783609688282
+평가 손실: 0.00058
+30일 예측 손실: 0.00469
 
 layer = SingleGRU
 hiddenState = 32
@@ -80,7 +80,7 @@ timeStep = 10
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -88,8 +88,8 @@ patience = 30
 
 TimeStep - 40
 모델 학습 시간: 27.3 sec
-평가 손실: 0.0008146808831952512
-30일 예측 손실: 0.0039017966482788324
+평가 손실: 0.000814
+30일 예측 손실: 0.003901
 
 layer = SingleGRU
 hiddenState = 32
@@ -97,7 +97,7 @@ timeStep = 40
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -105,8 +105,8 @@ patience = 30
 
 Epochs - 50
 모델 학습 시간: 20.8 sec
-평가 손실: 0.0008108873153105378
-30일 예측 손실: 0.0077910711988806725
+평가 손실: 0.00081
+30일 예측 손실: 0.00779
 
 layer = SingleGRU
 hiddenState = 32
@@ -114,16 +114,31 @@ timeStep = 20
 activation = tanh
 epochs = 50
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
-patience = 30
 
 --------------------------------------
 
+Epochs - 100
+모델 학습 시간: 42.9 sec
+평가 손실: 0.00058
+30일 예측 손실: 0.00852
+
+layer = SingleGRU
+hiddenState = 32
+timeStep = 20
+activation = tanh
+epochs = 100
+batchSize = 64
+dataSize = 10
+optimizer = adam
+patience = 100
+
+--------------------------------------
 Epochs - 200
 모델 학습 시간: 78.6 sec
-평가 손실: 0.00037092051934450865
-30일 예측 손실: 0.011358912102878094
+평가 손실: 0.00037
+30일 예측 손실: 0.01135
 
 layer = SingleGRU
 hiddenState = 32
@@ -131,16 +146,15 @@ timeStep = 20
 activation = tanh
 epochs = 200
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
-patience = 30
 
 --------------------------------------
 
 BatchSize - 32
 모델 학습 시간: 34.7 sec
-평가 손실: 0.0005054600187577307
-30일 예측 손실: 0.00605034502223134
+평가 손실: 0.00050
+30일 예측 손실: 0.0060
 
 layer = SingleGRU
 hiddenState = 32
@@ -148,7 +162,7 @@ timeStep = 20
 activation = tanh
 epochs = 200
 batchSize = 32
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -156,8 +170,8 @@ patience = 30
 
 BatchSize - 256
 모델 학습 시간: 7.42 sec
-평가 손실: 0.0007389191305264831
-30일 예측 손실: 0.0038152977358549833
+평가 손실: 0.00073
+30일 예측 손실: 0.00381
 
 layer = SingleGRU
 hiddenState = 32
@@ -165,7 +179,7 @@ timeStep = 20
 activation = tanh
 epochs = 200
 batchSize = 256
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -173,8 +187,8 @@ patience = 30
 
 DataSize - 5
 모델 학습 시간: 17.3 sec
-평가 손실: 0.0011630963999778032
-30일 예측 손실: 0.00867330189794302
+평가 손실: 0.00116
+30일 예측 손실: 0.0086
 
 layer = SingleGRU
 hiddenState = 32
@@ -182,7 +196,7 @@ timeStep = 20
 activation = tanh
 epochs = 200
 batchSize = 64
-dataSetYear = 5
+dataSize = 5
 optimizer = adam
 patience = 30
 
@@ -190,8 +204,8 @@ patience = 30
 
 DataSize - 40
 모델 학습 시간: 60.0 sec
-평가 손실: 0.0005011960165575147
-30일 예측 손실: 0.0019849396776407957
+평가 손실: 0.00050
+30일 예측 손실: 0.00198
 
 layer = SingleGRU
 hiddenState = 32
@@ -199,7 +213,7 @@ timeStep = 20
 activation = tanh
 epochs = 200
 batchSize = 64
-dataSetYear = 40
+dataSize = 40
 optimizer = adam
 patience = 30
 
@@ -207,8 +221,8 @@ patience = 30
 
 Optimizer - SGD
 모델 학습 시간: 28.8 sec
-평가 손실: 0.0008567487238906324
-30일 예측 손실: 0.0012054010294377804
+평가 손실: 0.00085
+30일 예측 손실: 0.00120
 
 layer = SingleGRU
 hiddenState = 32
@@ -216,7 +230,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = sgd
 patience = 30
 
@@ -224,8 +238,8 @@ patience = 30
 
 Patience - 10
 모델 학습 시간: 11.1 sec
-평가 손실: 0.0008463567937724292
-30일 예측 손실: 0.004046978894621134
+평가 손실: 0.00084
+30일 예측 손실: 0.00404
 
 layer = SingleGRU
 hiddenState = 32
@@ -233,7 +247,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 10
 
@@ -241,8 +255,8 @@ patience = 10
 
 Patience - 50
 모델 학습 시간: 40.2 sec
-평가 손실: 0.0004832963750232011
-30일 예측 손실: 0.012219579890370369
+평가 손실: 0.00048
+30일 예측 손실: 0.01221
 
 layer = SingleGRU
 hiddenState = 32
@@ -250,7 +264,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 50
 
@@ -258,8 +272,8 @@ patience = 50
 
 HiddenState - 16
 모델 학습 시간: 27.7 sec
-평가 손실: 0.0007437845342792571
-30일 예측 손실: 0.0014884541742503643
+평가 손실: 0.00074
+30일 예측 손실: 0.00148
 
 layer = SingleGRU
 hiddenState = 16
@@ -267,7 +281,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -275,8 +289,8 @@ patience = 30
 
 HiddenState - 64
 모델 학습 시간: 27.4 sec
-평가 손실: 0.0005334531306289136
-30일 예측 손실: 0.006323983892798424
+평가 손실: 0.00053
+30일 예측 손실: 0.00632
 
 layer = SingleGRU
 hiddenState = 64
@@ -284,7 +298,7 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 64
-dataSetYear = 10
+dataSize = 10
 optimizer = adam
 patience = 30
 
@@ -296,8 +310,8 @@ patience = 30
 
 Etc - Candidate Parameter 1
 모델 학습 시간: 12.0 sec
-평가 손실: 0.000971584115177393
-30일 예측 손실: 0.002009693067520857
+평가 손실: 0.00097
+30일 예측 손실: 0.00200
 
 layer = SingleGRU
 hiddenState = 16
@@ -305,7 +319,7 @@ timeStep = 40
 activation = tanh
 epochs = 100
 batchSize = 256
-dataSetYear = 40
+dataSize = 40
 optimizer = adam
 patience = 10
 
@@ -313,8 +327,8 @@ patience = 10
 
 Etc - Candidate Parameter 2
 모델 학습 시간: 32.3 sec
-평가 손실: 0.0009311164612881839
-30일 예측 손실: 0.003074758220463991
+평가 손실: 0.00093
+30일 예측 손실: 0.00307
 
 layer = SingleGRU
 hiddenState = 16
@@ -322,7 +336,7 @@ timeStep = 40
 activation = tanh
 epochs = 100
 batchSize = 256
-dataSetYear = 40
+dataSize = 40
 optimizer = adam
 patience = 30
 
@@ -330,8 +344,8 @@ patience = 30
 
 Etc - Candidate Parameter 3
 모델 학습 시간: 1.59e+02 sec
-평가 손실: 0.00034552105353213847
-30일 예측 손실: 0.0005946077289991081
+평가 손실: 0.00034
+30일 예측 손실: 0.00059
 
 layer = SingleGRU
 hiddenState = 16
@@ -339,7 +353,7 @@ timeStep = 40
 activation = tanh
 epochs = 100
 batchSize = 32
-dataSetYear = 40
+dataSize = 40
 optimizer = adam
 patience = 30
 
@@ -347,8 +361,8 @@ patience = 30
 
 Etc - Candidate Parameter 4
 모델 학습 시간: 6.37e+02 sec
-평가 손실: 0.00027280309586785734
-30일 예측 손실: 0.0014713905984535813
+평가 손실: 0.00027
+30일 예측 손실: 0.00147
 
 layer = TripleGRU
 hiddenState = 64
@@ -356,33 +370,16 @@ timeStep = 40
 activation = tanh
 epochs = 200
 batchSize = 32
-dataSetYear = 40
+dataSize = 40
 optimizer = adam
 patience = 50
 
 --------------------------------------
 
-Etc - OverFitting
-모델 학습 시간: 2.19e+02 sec
-평가 손실: 0.0011621718294918537
-30일 예측 손실: 0.0037230716552585363
-
-layer = TripleGRU
-hiddenState = 64
-timeStep = 40
-activation = tanh
-epochs = 200
-batchSize = 32
-dataSetYear = 5
-optimizer = adam
-patience = 100
-
---------------------------------------
-
 ETC - Candidate Parameter 5
 모델 학습 시간: 2e+02 sec
-평가 손실: 0.0005790494033135474
-30일 예측 손실: 0.009727432392537594
+평가 손실: 0.00057
+30일 예측 손실: 0.00972
 
 layer = DoubleGRU
 hiddenState = 16
@@ -390,26 +387,60 @@ timeStep = 20
 activation = tanh
 epochs = 100
 batchSize = 32
-dataSetYear = 40
+dataSize = 40
 optimizer = adam
 patience = 30
 
 --------------------------------------
 
-ETC - Test
-모델 학습 시간: 19.5 sec
-평가 손실: 0.0007259132689796388
-30일 예측 손실: 0.0047469111159443855
+ETC - Candidate Parameter 6
+모델 학습 시간: 2.86e+02 sec
+평가 손실: 0.000698
+30일 예측 손실: 0.00137
 
-layer = SingleGRU
-hiddenState = 32
-timeStep = 20
+layer = DoubleGRU
+hiddenState = 16
+timeStep = 40
 activation = tanh
 epochs = 100
-batchSize = 64
-dataSetYear = 10
+batchSize = 32
+dataSize = 40
 optimizer = adam
 patience = 30
+
+--------------------------------------
+
+ETC - Candidate Parameter 7
+모델 학습 시간: 8.5e+02 sec
+평가 손실: 0.000741216
+30일 예측 손실: 0.00645531
+
+layer = DoubleGRU
+hiddenState = 16
+timeStep = 40
+activation = tanh
+epochs = 100
+batchSize = 32
+dataSize = 40
+optimizer = adam
+patience = 100
+
+--------------------------------------
+
+Etc - OverFitting
+모델 학습 시간: 2.19e+02 sec
+평가 손실: 0.001162
+30일 예측 손실: 0.003723
+
+layer = TripleGRU
+hiddenState = 64
+timeStep = 40
+activation = tanh
+epochs = 200
+batchSize = 32
+dataSize = 5
+optimizer = adam
+patience = 100
 
 --------------------------------------
 
